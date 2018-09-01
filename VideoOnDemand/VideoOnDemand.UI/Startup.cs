@@ -53,6 +53,8 @@ namespace VideoOnDemand.UI
                     .ForMember(des => des.CourseDescription, src => src.MapFrom(s => s.Description))
                     .ForMember(des => des.MarqueeImageUrl, src => src.MapFrom(s => s.MarqueeImageUrl))
                     .ForMember(des => des.CourseImageUrl, src => src.MapFrom(s => s.ImageUrl));
+                cfg.CreateMap<Module, ModuleDTO>()
+                    .ForMember(des => des.ModuleTitle, src => src.MapFrom(s => s.Title));
             });
 
             var mapper = config.CreateMapper();
