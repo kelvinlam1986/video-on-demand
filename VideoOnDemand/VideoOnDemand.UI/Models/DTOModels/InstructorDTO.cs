@@ -7,4 +7,4 @@
         public string InstructorAvatar { get; set; }
     }
 }
-}
+
