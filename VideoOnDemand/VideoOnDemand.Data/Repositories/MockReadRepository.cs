@@ -31,7 +31,21 @@ namespace VideoOnDemand.Data.Repositories
                 MarqueeImageUrl = "/images/laptop.jpg",
                 ImageUrl = "/images/course3.jpg", Title = "MVC 5 For Beginners",
                 Description = "Course 3 Description: A very very long description."
-            }
+            },
+             new Course {
+                Id = 4,
+                InstructorId = 1,
+                MarqueeImageUrl = "/images/laptop.jpg",
+                ImageUrl = "/images/course.jpg", Title = "The road to React",
+                Description = "Course 1 Description: A very very long description."
+            },
+            new Course {
+            Id = 5,
+            InstructorId = 1,
+            MarqueeImageUrl = "/images/laptop.jpg",
+            ImageUrl = "/images/course.jpg", Title = "The road to Angular",
+            Description = "Course 1 Description: A very very long description."
+        },
         };
 
         List<UserCourse> _userCourses = new List<UserCourse>
@@ -39,7 +53,9 @@ namespace VideoOnDemand.Data.Repositories
             new UserCourse { UserId = "3aaf6b47-efd1-4973-8aa5-10a40fc15491", CourseId = 1 },
             new UserCourse { UserId = "00000000-0000-0000-0000-000000000000", CourseId = 2 },
             new UserCourse { UserId = "4ad684f8-bb70-4968-85f8-458aa7dc19a3", CourseId = 3 },
-            new UserCourse { UserId = "00000000-0000-0000-0000-000000000000", CourseId = 1 }
+            new UserCourse { UserId = "00000000-0000-0000-0000-000000000000", CourseId = 1 },
+            new UserCourse { UserId = "3aaf6b47-efd1-4973-8aa5-10a40fc15491", CourseId = 4 },
+            new UserCourse { UserId = "3aaf6b47-efd1-4973-8aa5-10a40fc15491", CourseId = 5 }
         };
 
         List<Module> _modules = new List<Module>
