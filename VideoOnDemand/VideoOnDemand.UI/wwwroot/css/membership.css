@@ -32,6 +32,10 @@
     font-weight: 600;
 }
 
+.membership h1, .membership h4 {
+    color: #666c74;
+}
+
 .membership p, .membership a {
     font-size: 0.875em;
     font-weight: 400;
