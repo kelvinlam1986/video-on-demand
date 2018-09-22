@@ -72,7 +72,7 @@ namespace VideoOnDemand.Data.Repositories
                 Title = "ADO.NET 1 (PDF)",
                 Url = "https://1drv.ms/b/s!AuD5OaH0ExAwn48rX9TZZ3kAOX6Peg" },
             new Download{
-                Id = 2, ModuleId = 1, CourseId = 1,
+                Id = 2, ModuleId = 2, CourseId = 1,
                 Title = "ADO.NET 2 (PDF)",
                 Url = "https://1drv.ms/b/s!AuD5OaH0ExAwn48rX9TZZ3kAOX6Peg" },
             new Download{
