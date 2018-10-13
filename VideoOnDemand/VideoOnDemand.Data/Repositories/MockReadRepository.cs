@@ -108,6 +108,11 @@ namespace VideoOnDemand.Data.Repositories
                 Thumbnail = "/images/video2.jpg", Url = "http://some_url/manifest"
             },
             new Video {
+                Id = 3, ModuleId = 1, CourseId = 1, Position = 3,
+                Title = "Video 5 Title", Description = "Video 5 Description: A very very long description.", Duration = 45,
+                Thumbnail = "/images/video2.jpg", Url = "http://some_url/manifest"
+            },
+            new Video {
                 Id = 3, ModuleId = 3, CourseId = 2, Position = 1,
                 Title = "Video 3 Title", Description = "Video 3 Description: A very very long description.", Duration = 41,
                 Thumbnail = "/images/video3.jpg", Url = "http://some_url/manifest"
