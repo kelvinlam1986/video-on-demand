@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using VideoOnDemand.Data.Data;
 
-namespace VideoOnDemand.UI.Services
+namespace VideoOnDemand.Data.Services
 {
     public class DbReadService : IDbReadService
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace VideoOnDemand.UI.Services
+namespace VideoOnDemand.Data.Services
 {
     public interface IDbReadService
     {

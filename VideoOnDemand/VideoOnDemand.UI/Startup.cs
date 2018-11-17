@@ -9,6 +9,7 @@ using VideoOnDemand.Data.Data;
 using VideoOnDemand.Data.Data.Entities;
 using VideoOnDemand.Data.Repositories;
 using VideoOnDemand.UI.Models.DTOModels;
+using VideoOnDemand.Data.Services;
 
 namespace VideoOnDemand.UI
 {
@@ -33,8 +34,9 @@ namespace VideoOnDemand.UI
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-            services.AddSingleton<IReadRepository, MockReadRepository>();
-
+            services.AddScoped<IReadRepository, SqlReadRepository>();
+            services.AddTransient<IDbReadService, DbReadService>();
+            
             services.AddMvc();
 
             var config = new AutoMapper.MapperConfiguration(cfg =>
