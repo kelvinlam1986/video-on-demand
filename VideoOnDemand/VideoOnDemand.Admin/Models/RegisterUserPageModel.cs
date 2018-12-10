@@ -15,6 +15,7 @@ namespace VideoOnDemand.Admin.Models
 
         [Required]
         [Display(Name = "Confirm password")]
+        [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match")]
         public string ConfirmPasswod { get; set; }
     }
