@@ -21,6 +21,7 @@ namespace VideoOnDemand.Data.Data.Entities
 
         public int Duration { get; set; }
         public int Position { get; set; }
+        [Display(Name = "Module Id")]
         public int ModuleId { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
