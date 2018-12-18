@@ -5,7 +5,7 @@
 
 @inject SignInManager<User> SignInManager
 
-@{ 
+@{
     ViewData["Title"] = "Users";
 }
 
@@ -14,10 +14,12 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h2>Users</h2>
+            <status-message message="@Model.StatusMessage" message-type="success"></status-message>
             <page-button path="Users/Create" bootstrap-style="primary"
                          description="Create New"></page-button>
             <page-button path="Index" bootstrap-style="warning"
                          glyph="list-alt" description="Dashboard"></page-button>
+
             <table class="table">
                 <thead>
                     <tr>
@@ -30,17 +32,17 @@
                 <tbody>
                     @foreach (var user in Model.Users)
                     {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => user.Email)</td>
-                        <td>@Html.DisplayFor(modelItem => user.IsAdmin)</td>
-                        <td>@Html.DisplayFor(modelItem => user.Id)</td>
-                        <td class="button-col-width">
-                            <page-button path="Users/Edit" bootstrap-style="success"
-                                         glyph="pencil" id-userId="@user.Id"></page-button>
-                            <page-button path="Users/Delete" bootstrap-style="danger"
-                                         glyph="remove" id-userId="@user.Id"></page-button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => user.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => user.IsAdmin)</td>
+                            <td>@Html.DisplayFor(modelItem => user.Id)</td>
+                            <td class="button-col-width">
+                                <page-button path="Users/Edit" bootstrap-style="success"
+                                             glyph="pencil" id-userId="@user.Id"></page-button>
+                                <page-button path="Users/Delete" bootstrap-style="danger"
+                                             glyph="remove" id-userId="@user.Id"></page-button>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>
