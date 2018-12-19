@@ -2,41 +2,42 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Threading.Tasks;
-using VideoOnDemand.Admin.Models;
-using VideoOnDemand.Admin.Services;
+using VideoOnDemand.Data.Data.Entities;
+using VideoOnDemand.Data.Services;
 
 namespace VideoOnDemand.Admin.Pages.Videos
 {
     [Authorize(Roles = "Admin")]
     public class DeleteModel : PageModel
     {
-        private IUserService _userService;
+        private IDbReadService _dbReadService;
+        private IDbWriteService _dbWriteService;
 
         [BindProperty]
-        public UserPageModel Input { get; set; } = new UserPageModel();
+        public Video Input { get; set; } = new Video();
 
         [TempData]
         public string StatusMessage { get; set; }
 
-        public DeleteModel(IUserService userService)
+        public DeleteModel(IDbReadService dbReadService, IDbWriteService dbWriteService)
         {
-            _userService = userService;
+            _dbReadService = dbReadService;
+            _dbWriteService = dbWriteService;
         }
 
-        public void OnGet(string userId)
+        public void OnGet(int id)
         {
-            StatusMessage = string.Empty;
-            Input = _userService.GetUser(userId);
+            Input = _dbReadService.Get<Video>(id, true);
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (ModelState.IsValid)
             {
-                var result = await _userService.DeleteUser(Input.Id);
-                if (result)
+                var success = await _dbWriteService.Delete(Input);
+                if (success)
                 {
-                    StatusMessage = $"User {Input.Email} was deleted.";
+                    StatusMessage = $"Deleted Video: {Input.Title}.";
                     return RedirectToPage("Index");
                 }
             }
