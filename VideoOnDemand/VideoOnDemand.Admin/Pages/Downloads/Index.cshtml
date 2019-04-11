@@ -24,7 +24,6 @@
                 <thead>
                     <tr>
                         <th>Title</th>
-                        <th>Description</th>
                         <th>Url</th>
                         <th>Course</th>
                         <th>Module</th>
@@ -36,14 +35,13 @@
                     {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Title)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
                         <td>@Html.DisplayFor(modelItem => item.Url)</td>
                         <td>@Html.DisplayFor(modelItem => item.Course.Title)</td>
                         <td>@Html.DisplayFor(modelItem => item.Module.Title)</td>
                         <td class="button-col-width">
-                            <page-button path="Videos/Edit" bootstrap-style="success"
+                            <page-button path="Downloads/Edit" bootstrap-style="success"
                                          glyph="pencil" id="@item.Id"></page-button>
-                            <page-button path="Videos/Delete" bootstrap-style="danger"
+                            <page-button path="Downloads/Delete" bootstrap-style="danger"
                                          glyph="remove" id="@item.Id"></page-button>
                         </td>
                     </tr>

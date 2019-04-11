@@ -14,7 +14,7 @@ namespace VideoOnDemand.Admin.Pages.Downloads
         private IDbWriteService _dbWriteService;
 
         [BindProperty]
-        public Video Input { get; set; } = new Video();
+        public Download Input { get; set; } = new Download();
 
         [TempData]
         public string StatusMessage { get; set; }
@@ -28,7 +28,7 @@ namespace VideoOnDemand.Admin.Pages.Downloads
         public void OnGet(int id)
         {
             ViewData["Modules"] = _dbReadService.GetSelectList<Module>("Id", "Title");
-            Input = _dbReadService.Get<Video>(id, true);
+            Input = _dbReadService.Get<Download>(id, true);
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -40,7 +40,7 @@ namespace VideoOnDemand.Admin.Pages.Downloads
                 var success = await _dbWriteService.Update(Input);
                 if (success)
                 {
-                    StatusMessage = $"Updated Video: {Input.Title}.";
+                    StatusMessage = $"Updated Download: {Input.Title}.";
                     return RedirectToPage("Index");
                 }
             }

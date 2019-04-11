@@ -1,12 +1,12 @@
 ﻿@page
-@model VideoOnDemand.Admin.Pages.Videos.EditModel
+@model VideoOnDemand.Admin.Pages.Downloads.EditModel
 
 @using Microsoft.AspNetCore.Identity
 @using VideoOnDemand.Data.Data.Entities
 @inject SignInManager<User> SignInManager
 
 @{
-    ViewData["Title"] = "Edit Video";
+    ViewData["Title"] = "Edit Download";
 }
 
 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
@@ -28,29 +28,9 @@
                     <span asp-validation-for="Input.Title" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Description"></label>
-                    <input asp-for="Input.Description" class="form-control" />
-                    <span asp-validation-for="Input.Description" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Duration"></label>
-                    <input asp-for="Input.Duration" class="form-control" />
-                    <span asp-validation-for="Input.Duration" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Thumbnail"></label>
-                    <input asp-for="Input.Thumbnail" class="form-control" />
-                    <span asp-validation-for="Input.Thumbnail" class="text-danger"></span>
-                </div>
-                <div class="form-group">
                     <label asp-for="Input.Url"></label>
                     <input asp-for="Input.Url" class="form-control" />
                     <span asp-validation-for="Input.Url" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Input.Position"></label>
-                    <input asp-for="Input.Position" class="form-control" />
-                    <span asp-validation-for="Input.Position" class="text-danger"></span>
                 </div>
                 <div class="form-group">
                     <label class="control-label">Course</label>

@@ -14,7 +14,7 @@ namespace VideoOnDemand.Admin.Pages.Downloads
         private IDbWriteService _dbWriteService;
 
         [BindProperty]
-        public Video Input { get; set; } = new Video();
+        public Download Input { get; set; } = new Download();
 
         [TempData]
         public string StatusMessage { get; set; }
@@ -38,7 +38,7 @@ namespace VideoOnDemand.Admin.Pages.Downloads
                 var success = await _dbWriteService.Add(Input);
                 if (success)
                 {
-                    StatusMessage = $"Created a new Video: {Input.Title}.";
+                    StatusMessage = $"Created a new Download: {Input.Title}.";
                     return RedirectToPage("Index");
                 }
             }
